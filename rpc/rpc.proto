@@ -1,0 +1,62 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package rpc;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SendTransaction(Bytes)returns (Response) {}
+  rpc GetAccount(Address)returns (Response) {}
+  rpc GetTransaction(Hash)returns (Response) {}
+  rpc GetBlockByHash(Hash)returns (Response) {}
+  rpc GetBlockByHeight(Height)returns (Response) {}
+  rpc GetPoolTxs(Null)returns (Response) {}
+  rpc GetLastHeight(Null)returns (Response) {}
+  rpc GetContract(Address)returns (Response) {}
+  rpc GetConfirmedHeight(Null)returns (Response) {}
+  rpc Peers(Null)returns (Response) {}
+  rpc NodeInfo(Null)returns (Response) {}
+}
+
+// The request message containing the user's name.
+message Bytes {
+  bytes bytes = 1;
+}
+
+message Address{
+  string address = 1;
+}
+
+message Hash{
+  string hash = 1;
+}
+
+message Height{
+ uint64 height = 1;
+}
+
+message Null{
+}
+
+
+
+// The response message containing the greetings
+message Response {
+  int32 code = 1;
+  bytes result = 2;
+  string err = 3;
+}
