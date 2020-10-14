@@ -49,6 +49,7 @@ type Config struct {
 	KeyFile     string `long:"keyfile" description:"If you participate in mining, you need to configure the mining address key file"`
 	KeyPass     string `long:"keypass" description:"The decryption password for key file"`
 	FallBackTo  int64  `long:"fallbackto" description:"Force back to a height"`
+	Version     bool   `long:"version" description:"View Version number"`
 	NodePrivate *NodePrivate
 }
 
@@ -77,6 +78,11 @@ func LoadConfig() (*Config, error) {
 		if err != nil {
 			return nil, err
 		}
+	}
+
+	if cfg.Version {
+		fmt.Printf("UWorld version %s\n", param.Version)
+		os.Exit(0)
 	}
 
 	// Set the default external IP. If the external IP is not set,

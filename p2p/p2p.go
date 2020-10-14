@@ -245,7 +245,7 @@ func (p *P2pServer) discovery() error {
 			peerChan, err := routingDiscovery.FindPeers(p.ctx, param.UniqueNetWork)
 			if err != nil {
 				log.Error("Failed to find peers", "error", err)
-				time.Sleep(time.Second * 10)
+				time.Sleep(time.Second * 60)
 				continue
 			}
 		OUTCHAN:
@@ -259,7 +259,7 @@ func (p *P2pServer) discovery() error {
 						if !p.peerManager.HashPeer(addr.ID.String()) {
 							//log.Info("Connecting to:", "peer", addr.String())
 							if !p.peerIsLive(addr.ID) {
-								log.Warn("New stream failed!", "addr", addr.String())
+								//log.Warn("New stream failed!", "addr", addr.String())
 								p.peerManager.Remove(addr.ID.String())
 								continue
 							}
@@ -273,15 +273,14 @@ func (p *P2pServer) discovery() error {
 				}
 			}
 		}
-		time.Sleep(time.Second * 10)
+		time.Sleep(time.Second * 60)
 	}
 	return nil
 }
 
 // Determine whether the peer is alive
 func (p *P2pServer) peerIsLive(id peer.ID) bool {
-	ctx := network.WithDialPeerTimeout(context.Background(), time.Second*120)
-	stream, err := p.host.NewStream(ctx, id, protocol.ID(param.UniqueNetWork))
+	stream, err := p.host.NewStream(context.Background(), id, protocol.ID(param.UniqueNetWork))
 	if err != nil {
 		return false
 	}
