@@ -42,6 +42,56 @@ var SendTransactionCmd = &cobra.Command{
 	Run:  SendTransaction,
 }
 
+func SendTransactionByAddrRpc(args []string) (string, error) {
+	var passwd []byte
+	var err error
+	if len(args) > 5 {
+		passwd = []byte(args[5])
+	} else {
+		return "", fmt.Errorf("read password failed! %s", err.Error())
+	}
+	privKey, err := ReadAddrPrivate(getAddJsonPath(args[0]), passwd)
+	if err != nil {
+		return "", fmt.Errorf("wrong password")
+
+	}
+
+	tx, err := parseParams(args)
+	if err != nil {
+		return "", err
+
+	}
+	resp, err := GetAccountByRpc(tx.From().String())
+	if err != nil {
+		return "", err
+
+	}
+	if resp.Code != 0 {
+		return "", fmt.Errorf(" err: code %d, message: %s", resp.Code, resp.Err)
+
+	}
+	var account *rpctypes.Account
+	if err := json.Unmarshal(resp.Result, &account); err != nil {
+		return "", fmt.Errorf(" err: ", err)
+
+	}
+	if tx.TxHead.Nonce == 0 {
+		tx.TxHead.Nonce = account.Nonce + 1
+	}
+	if !signTx1(tx, privKey.Private) {
+		return "", fmt.Errorf(" err: ", errors.New("signature failure"))
+	}
+
+	rs, err := sendTx1(tx)
+	if err != nil {
+		return "", fmt.Errorf(" err: ", err)
+	} else if rs.Code != 0 {
+		return "", fmt.Errorf(" err: code %d, message: %s", rs.Code, rs.Err)
+	} else {
+		return string(rs.Result), nil
+	}
+}
+
 func SendTransaction(cmd *cobra.Command, args []string) {
 	var passwd []byte
 	var err error
@@ -138,8 +188,44 @@ func signTx(cmd *cobra.Command, tx *types.Transaction, key string) bool {
 	}
 	return true
 }
-
+func signTx1(tx *types.Transaction, key string) bool {
+	tx.SetHash()
+	priv, err := secp256k1.ParseStringToPrivate(key)
+	if err != nil {
+		return false
+	}
+	if err := tx.SignTx(priv); err != nil {
+		return false
+	}
+	return true
+}
 func sendTx(cmd *cobra.Command, tx *types.Transaction) (*rpc.Response, error) {
+	rpcTx, err := types.TranslateTxToRpcTx(tx)
+	if err != nil {
+		return nil, err
+	}
+	rpcClient, err := NewRpcClient()
+	if err != nil {
+		return nil, err
+	}
+	defer rpcClient.Close()
+
+	jsonBytes, err := json.Marshal(rpcTx)
+	if err != nil {
+		return nil, err
+	}
+	re := &rpc.Bytes{Bytes: jsonBytes}
+	ctx, cancel := context.WithTimeout(context.TODO(), time.Second*20)
+	defer cancel()
+
+	resp, err := rpcClient.Gc.SendTransaction(ctx, re)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+
+}
+func sendTx1(tx *types.Transaction) (*rpc.Response, error) {
 	rpcTx, err := types.TranslateTxToRpcTx(tx)
 	if err != nil {
 		return nil, err

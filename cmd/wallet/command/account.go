@@ -150,6 +150,39 @@ func CreateAccount(cmd *cobra.Command, args []string) {
 	}
 }
 
+func CreateAccountRpc(pwd string) (*keystore.Json, error) {
+	var passWd []byte
+	var err error
+
+	passWd = []byte(pwd)
+	if len(passWd) > 32 {
+
+		return nil, fmt.Errorf("password too long! ")
+	}
+	entropy, err := ut.Entropy()
+	if err != nil {
+		return nil, err
+	}
+	mnemonicStr, err := ut.Mnemonic(entropy)
+	if err != nil {
+		return nil, err
+	}
+	key, err := ut.MnemonicToEc(mnemonicStr)
+	if err != nil {
+		return nil, fmt.Errorf("generate secp256k1 key failed! %s", err.Error())
+	}
+	p2pId, err := p2p.GenerateP2pId(key)
+	if err != nil {
+		return nil, fmt.Errorf("generate p2p id failed! %s", err.Error())
+	}
+	if j, err := keystore.GenerateKeyJson(Net, Cfg.KeyStoreDir, key, mnemonicStr, passWd); err != nil {
+		return nil, fmt.Errorf("generate key failed! %s", err.Error())
+	} else {
+		j.P2pId = p2pId.String()
+		return j, nil
+	}
+}
+
 func readPassWd() ([]byte, error) {
 	var passWd [33]byte
 
@@ -227,6 +260,19 @@ func DecryptAccount(cmd *cobra.Command, args []string) {
 
 	bytes, _ := json.Marshal(privKey)
 	output(string(bytes))
+}
+
+func DecryptAccountRpc(address string, pwd string) (*keystore.Private, error) {
+	var passWd []byte
+	var keyFile string
+	var err error
+	passWd = []byte(pwd)
+	keyFile = getAddJsonPath(address)
+	privKey, err := ReadAddrPrivate(keyFile, passWd)
+	if err != nil {
+		return nil, fmt.Errorf("wrong password")
+	}
+	return privKey, nil
 }
 
 var MnemonicToAccountCmd = &cobra.Command{

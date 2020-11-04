@@ -41,6 +41,9 @@ func main() {
 	http.HandleFunc("/MnemonicToEc", MnemonicToEc)
 	http.HandleFunc("/EcToAccount", EcToAccountRpc)
 	http.HandleFunc("/GetTransaction", GetTransactionRpc)
+	http.HandleFunc("/CreateAccount", CreateAccountRpc)
+	http.HandleFunc("/DecryptAccount", DecryptAccountRpc)
+	http.HandleFunc("/SendTransactionByAddr", SendTransactionByAddrRpc)
 
 	http.ListenAndServe("0.0.0.0:8000", nil)
 
@@ -67,6 +70,7 @@ func GetAccountRpc(w http.ResponseWriter, r *http.Request) {
 	bytes, _ := json.Marshal(response)
 	fmt.Fprintln(w, string(bytes))
 }
+
 func SendTransactionRpc(w http.ResponseWriter, r *http.Request) {
 	response := ResResponse{Code: 1,
 		Result: nil,
@@ -85,6 +89,33 @@ func SendTransactionRpc(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	bytes, _ := json.Marshal(response)
+	fmt.Fprintln(w, string(bytes))
+}
+func SendTransactionByAddrRpc(w http.ResponseWriter, r *http.Request) {
+	response := ResResponse{Code: 1,
+		Result: nil,
+		Err:    ""}
+	//{from} {to} {contract} {amount} {note} {password} {nonce}
+
+	var args []string
+
+	args = append(args, r.PostFormValue("from"))
+	args = append(args, r.PostFormValue("to"))
+	args = append(args, r.PostFormValue("contract"))
+	args = append(args, r.PostFormValue("amount"))
+	args = append(args, r.PostFormValue("note"))
+	args = append(args, r.PostFormValue("password"))
+	args = append(args, r.PostFormValue("nonce"))
+
+	resp, err := command.SendTransactionByAddrRpc(args)
+
+	if err != nil {
+		response.Err = err.Error()
+	} else {
+		response.Result = resp
+		response.Code = 0
+	}
 	bytes, _ := json.Marshal(response)
 	fmt.Fprintln(w, string(bytes))
 }
@@ -142,6 +173,39 @@ func EcToAccountRpc(w http.ResponseWriter, r *http.Request) {
 	passWd := r.PostFormValue("passWd")
 	resp, err := command.EcToAccountRpc([]byte(passWd), private)
 
+	if err != nil {
+		response.Err = err.Error()
+	} else {
+		response.Result = resp
+		response.Code = 0
+	}
+	bytes, _ := json.Marshal(response)
+	fmt.Fprintln(w, string(bytes))
+}
+
+func CreateAccountRpc(w http.ResponseWriter, r *http.Request) {
+	response := ResResponse{Code: 1,
+		Result: nil,
+		Err:    ""}
+
+	passWd := r.PostFormValue("passWd")
+	resp, err := command.CreateAccountRpc(passWd)
+	if err != nil {
+		response.Err = err.Error()
+	} else {
+		response.Result = resp
+		response.Code = 0
+	}
+	bytes, _ := json.Marshal(response)
+	fmt.Fprintln(w, string(bytes))
+}
+func DecryptAccountRpc(w http.ResponseWriter, r *http.Request) {
+	response := ResResponse{Code: 1,
+		Result: nil,
+		Err:    ""}
+	address := r.PostFormValue("address")
+	passWd := r.PostFormValue("passWd")
+	resp, err := command.DecryptAccountRpc(address, passWd)
 	if err != nil {
 		response.Err = err.Error()
 	} else {
