@@ -1,6 +1,6 @@
 package param
 
-import "github.com/jhdriver/UWORLD/common/hasharry"
+import "github.com/uworldao/UWORLD/common/hasharry"
 
 const (
 	// Mainnet logo

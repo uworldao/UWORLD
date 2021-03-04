@@ -21,10 +21,10 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/common/hasharry"
 
-	log "github.com/jhdriver/UWORLD/log/log15"
 	"github.com/rcrowley/go-metrics"
+	log "github.com/uworldao/UWORLD/log/log15"
 )
 
 var (

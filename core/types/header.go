@@ -3,9 +3,9 @@ package types
 import (
 	"bytes"
 	"encoding/gob"
-	"github.com/jhdriver/UWORLD/common/encode/rlp"
-	hash2 "github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/crypto/hash"
+	"github.com/uworldao/UWORLD/common/encode/rlp"
+	hash2 "github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/crypto/hash"
 )
 
 const BlockVersion = 1

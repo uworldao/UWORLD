@@ -2,9 +2,9 @@ package command
 
 import (
 	"fmt"
-	"github.com/jhdriver/UWORLD/crypto/mnemonic"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+	"github.com/uworldao/UWORLD/crypto/mnemonic"
 )
 
 func init() {

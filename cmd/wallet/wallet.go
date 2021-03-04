@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"github.com/BurntSushi/toml"
-	"github.com/jhdriver/UWORLD/cmd/wallet/command"
-	"github.com/jhdriver/UWORLD/cmd/wallet/config"
-	"github.com/jhdriver/UWORLD/common/utils"
-	config2 "github.com/jhdriver/UWORLD/config"
-	"github.com/jhdriver/UWORLD/param"
 	"github.com/spf13/cobra"
+	"github.com/uworldao/UWORLD/cmd/wallet/command"
+	"github.com/uworldao/UWORLD/cmd/wallet/config"
+	"github.com/uworldao/UWORLD/common/utils"
+	config2 "github.com/uworldao/UWORLD/config"
+	"github.com/uworldao/UWORLD/param"
 	"os"
 )
 

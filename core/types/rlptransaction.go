@@ -1,6 +1,6 @@
 package types
 
-import "github.com/jhdriver/UWORLD/common/encode/rlp"
+import "github.com/uworldao/UWORLD/common/encode/rlp"
 
 type RlpTransaction struct {
 	TxHead *TransactionHead

@@ -1,9 +1,9 @@
 package log
 
 import (
-	"github.com/jhdriver/UWORLD/log/log15/term"
 	"github.com/jrick/logrotate/rotator"
 	"github.com/mattn/go-colorable"
+	"github.com/uworldao/UWORLD/log/log15/term"
 	"io"
 	"os"
 )

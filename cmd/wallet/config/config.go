@@ -1,6 +1,6 @@
 package config
 
-import "github.com/jhdriver/UWORLD/config"
+import "github.com/uworldao/UWORLD/config"
 
 type Config struct {
 	ConfigFile  string

@@ -2,8 +2,8 @@ package log
 
 import (
 	"fmt"
-	log "github.com/jhdriver/UWORLD/log/log15"
 	"github.com/jrick/logrotate/rotator"
+	log "github.com/uworldao/UWORLD/log/log15"
 	"os"
 	"path/filepath"
 )

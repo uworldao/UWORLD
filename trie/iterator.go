@@ -20,7 +20,7 @@ import (
 	"bytes"
 	"container/heap"
 	"errors"
-	"github.com/jhdriver/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/common/hasharry"
 )
 
 // Iterator is a key-value trie iterator that traverses a Trie.

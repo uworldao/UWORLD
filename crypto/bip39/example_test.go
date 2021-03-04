@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/jhdriver/UWORLD/crypto/bip39"
+	"github.com/uworldao/UWORLD/crypto/bip39"
 )
 
 func ExampleNewMnemonic() {

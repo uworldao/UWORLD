@@ -1,6 +1,6 @@
 package core
 
-import "github.com/jhdriver/UWORLD/core/types"
+import "github.com/uworldao/UWORLD/core/types"
 
 // Transaction pool interface, which is used to manage the transaction pool
 type ITxPool interface {

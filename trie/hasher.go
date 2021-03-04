@@ -19,11 +19,11 @@ package trie
 import (
 	"bytes"
 	"crypto/sha256"
-	hash2 "github.com/jhdriver/UWORLD/common/hasharry"
+	hash2 "github.com/uworldao/UWORLD/common/hasharry"
 	"hash"
 	"sync"
 
-	"github.com/jhdriver/UWORLD/common/encode/rlp"
+	"github.com/uworldao/UWORLD/common/encode/rlp"
 )
 
 type hasher struct {

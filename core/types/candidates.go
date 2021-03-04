@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/jhdriver/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/common/hasharry"
 )
 
 // Super nodes

@@ -1,8 +1,8 @@
 package accountstate
 
 import (
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/core/types"
 )
 
 // Storage interface for account balance information

@@ -3,12 +3,12 @@ package core
 import (
 	"errors"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/consensus"
-	"github.com/jhdriver/UWORLD/core/types"
-	"github.com/jhdriver/UWORLD/database/blcdb"
-	log "github.com/jhdriver/UWORLD/log/log15"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/consensus"
+	"github.com/uworldao/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/database/blcdb"
+	log "github.com/uworldao/UWORLD/log/log15"
+	"github.com/uworldao/UWORLD/param"
 	"sync"
 )
 

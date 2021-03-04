@@ -2,14 +2,14 @@ package blkmgr
 
 import (
 	"errors"
-	"github.com/jhdriver/UWORLD/consensus"
-	"github.com/jhdriver/UWORLD/core"
-	"github.com/jhdriver/UWORLD/core/types"
-	log "github.com/jhdriver/UWORLD/log/log15"
-	"github.com/jhdriver/UWORLD/p2p"
-	"github.com/jhdriver/UWORLD/services/reqmgr"
 	"github.com/libp2p/go-libp2p-core/network"
 	"github.com/libp2p/go-libp2p-core/peer"
+	"github.com/uworldao/UWORLD/consensus"
+	"github.com/uworldao/UWORLD/core"
+	"github.com/uworldao/UWORLD/core/types"
+	log "github.com/uworldao/UWORLD/log/log15"
+	"github.com/uworldao/UWORLD/p2p"
+	"github.com/uworldao/UWORLD/services/reqmgr"
 	"math/rand"
 	"time"
 )

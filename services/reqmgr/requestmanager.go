@@ -2,10 +2,10 @@ package reqmgr
 
 import (
 	"encoding/json"
-	"github.com/jhdriver/UWORLD/core"
-	"github.com/jhdriver/UWORLD/core/types"
-	log "github.com/jhdriver/UWORLD/log/log15"
 	"github.com/libp2p/go-libp2p-core/network"
+	"github.com/uworldao/UWORLD/core"
+	"github.com/uworldao/UWORLD/core/types"
+	log "github.com/uworldao/UWORLD/log/log15"
 	"sync"
 	"time"
 )

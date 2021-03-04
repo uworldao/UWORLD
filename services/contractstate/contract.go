@@ -1,9 +1,9 @@
 package contractstate
 
 import (
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/core/types"
-	"github.com/jhdriver/UWORLD/database/contractdb"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/database/contractdb"
 	"sync"
 )
 

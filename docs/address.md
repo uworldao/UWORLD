@@ -3,9 +3,9 @@
 
 ### 工具包
 ```
-github.com/jhdriver/UWORLD/param
-github.com/jhdriver/UWORLD/ut
-github.com/jhdriver/UWORLD/common/hasharry
+github.com/uworldao/UWORLD/param
+github.com/uworldao/UWORLD/ut
+github.com/uworldao/UWORLD/common/hasharry
 ```
 
 

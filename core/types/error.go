@@ -3,7 +3,7 @@ package types
 import (
 	"errors"
 	"fmt"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/param"
 )
 
 var (

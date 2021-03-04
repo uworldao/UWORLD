@@ -1,7 +1,7 @@
 package core
 
 import (
-	"github.com/jhdriver/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/core/types"
 )
 
 type ErrTxs struct {

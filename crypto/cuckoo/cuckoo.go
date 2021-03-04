@@ -2,8 +2,8 @@ package cuckoo
 
 import (
 	"fmt"
-	"github.com/jhdriver/UWORLD/crypto/cuckoo/siphash"
 	"github.com/pkg/errors"
+	"github.com/uworldao/UWORLD/crypto/cuckoo/siphash"
 	"runtime"
 	"sort"
 	"sync"

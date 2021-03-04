@@ -3,9 +3,9 @@ package types
 import (
 	"errors"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/crypto/hash"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/crypto/hash"
+	"github.com/uworldao/UWORLD/param"
 )
 
 // Account information, not sending a transaction or sending an

@@ -1,10 +1,10 @@
 package p2p
 
 import (
-	log "github.com/jhdriver/UWORLD/log/log15"
 	"github.com/libp2p/go-libp2p-core/peer"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	"github.com/multiformats/go-multiaddr"
+	log "github.com/uworldao/UWORLD/log/log15"
 	"strings"
 )
 

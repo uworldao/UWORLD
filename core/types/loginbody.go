@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/param"
 )
 
 const PeerIdLength = 53

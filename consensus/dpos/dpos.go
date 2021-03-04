@@ -3,12 +3,12 @@ package dpos
 import (
 	"errors"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/consensus"
-	"github.com/jhdriver/UWORLD/core/types"
-	"github.com/jhdriver/UWORLD/crypto/hash"
-	"github.com/jhdriver/UWORLD/database/dposdb"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/consensus"
+	"github.com/uworldao/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/crypto/hash"
+	"github.com/uworldao/UWORLD/database/dposdb"
+	"github.com/uworldao/UWORLD/param"
 	"sort"
 	"time"
 )

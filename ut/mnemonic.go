@@ -2,10 +2,10 @@ package ut
 
 import (
 	"encoding/hex"
-	"github.com/jhdriver/UWORLD/crypto/bip32"
-	"github.com/jhdriver/UWORLD/crypto/bip39"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
-	"github.com/jhdriver/UWORLD/crypto/seed"
+	"github.com/uworldao/UWORLD/crypto/bip32"
+	"github.com/uworldao/UWORLD/crypto/bip39"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/crypto/seed"
 )
 
 func Entropy() (string, error) {

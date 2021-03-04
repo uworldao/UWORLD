@@ -1,8 +1,8 @@
 package statedb
 
 import (
-	"github.com/jhdriver/UWORLD/common/utils"
-	"github.com/jhdriver/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/common/utils"
+	"github.com/uworldao/UWORLD/core/types"
 	"os"
 	"strconv"
 	"testing"

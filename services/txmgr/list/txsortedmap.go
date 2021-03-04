@@ -2,8 +2,8 @@ package list
 
 import (
 	"container/heap"
-	"github.com/jhdriver/UWORLD/core"
-	"github.com/jhdriver/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/core"
+	"github.com/uworldao/UWORLD/core/types"
 )
 
 type TxSortedMap struct {

@@ -88,7 +88,7 @@ cp wallet.toml.example wallet.toml
 ## Documents
 
 
-- [RPC](https://github.com/jhdriver/UWORLD/tree/master/docs/rpc.md)
-- [Address](https://github.com/jhdriver/UWORLD/tree/master/docs/address.md)
-- [Transaction](https://github.com/jhdriver/UWORLD/tree/master/docs/transaction.md)
-- [Start](https://github.com/jhdriver/UWORLD/tree/master/docs/start.md)
+- [RPC](https://github.com/uworldao/UWORLD/tree/master/docs/rpc.md)
+- [Address](https://github.com/uworldao/UWORLD/tree/master/docs/address.md)
+- [Transaction](https://github.com/uworldao/UWORLD/tree/master/docs/transaction.md)
+- [Start](https://github.com/uworldao/UWORLD/tree/master/docs/start.md)

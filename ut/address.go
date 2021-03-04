@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/crypto/base58"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
-	"github.com/jhdriver/UWORLD/crypto/hash"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/crypto/base58"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/crypto/hash"
+	"github.com/uworldao/UWORLD/param"
 	"unicode"
 )
 

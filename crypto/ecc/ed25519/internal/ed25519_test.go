@@ -15,7 +15,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jhdriver/UWORLD/crypto/ecc/ed25519/internal/edwards25519"
+	"github.com/uworldao/UWORLD/crypto/ecc/ed25519/internal/edwards25519"
 )
 
 type zeroReader struct{}

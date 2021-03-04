@@ -2,10 +2,10 @@ package reqmgr
 
 import (
 	"errors"
-	"github.com/jhdriver/UWORLD/common/encode/rlp"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/core/types"
 	"github.com/libp2p/go-libp2p-core/network"
+	"github.com/uworldao/UWORLD/common/encode/rlp"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/core/types"
 	"strconv"
 )
 

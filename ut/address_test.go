@@ -2,8 +2,8 @@ package ut
 
 import (
 	"fmt"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/param"
 	"testing"
 )
 

@@ -1,8 +1,8 @@
 package types
 
 import (
-	hash2 "github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/crypto/hash"
+	hash2 "github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/crypto/hash"
 )
 
 // Block structure

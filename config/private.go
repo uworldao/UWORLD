@@ -3,12 +3,12 @@ package config
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/common/keystore"
-	"github.com/jhdriver/UWORLD/common/utils"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
-	"github.com/jhdriver/UWORLD/crypto/mnemonic"
-	"github.com/jhdriver/UWORLD/ut"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/common/keystore"
+	"github.com/uworldao/UWORLD/common/utils"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/crypto/mnemonic"
+	"github.com/uworldao/UWORLD/ut"
 	"io/ioutil"
 	"os"
 )

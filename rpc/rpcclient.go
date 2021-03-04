@@ -3,7 +3,7 @@ package rpc
 import (
 	"context"
 	"fmt"
-	"github.com/jhdriver/UWORLD/config"
+	"github.com/uworldao/UWORLD/config"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 )

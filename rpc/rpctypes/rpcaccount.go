@@ -1,6 +1,6 @@
 package rpctypes
 
-import "github.com/jhdriver/UWORLD/core/types"
+import "github.com/uworldao/UWORLD/core/types"
 
 type Account struct {
 	Address         string         `json:"address"`

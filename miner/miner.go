@@ -1,13 +1,13 @@
 package miner
 
 import (
-	"github.com/jhdriver/UWORLD/common/hasharry"
-	"github.com/jhdriver/UWORLD/consensus"
-	"github.com/jhdriver/UWORLD/core"
-	"github.com/jhdriver/UWORLD/core/types"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
-	log "github.com/jhdriver/UWORLD/log/log15"
-	"github.com/jhdriver/UWORLD/param"
+	"github.com/uworldao/UWORLD/common/hasharry"
+	"github.com/uworldao/UWORLD/consensus"
+	"github.com/uworldao/UWORLD/core"
+	"github.com/uworldao/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
+	log "github.com/uworldao/UWORLD/log/log15"
+	"github.com/uworldao/UWORLD/param"
 	"time"
 )
 

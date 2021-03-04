@@ -1,8 +1,8 @@
 package peermgr
 
 import (
-	log "github.com/jhdriver/UWORLD/log/log15"
-	"github.com/jhdriver/UWORLD/p2p"
+	log "github.com/uworldao/UWORLD/log/log15"
+	"github.com/uworldao/UWORLD/p2p"
 	"math/rand"
 	"sync"
 	"time"

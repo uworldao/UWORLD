@@ -2,7 +2,7 @@ package list
 
 import (
 	"fmt"
-	"github.com/jhdriver/UWORLD/core/types"
+	"github.com/uworldao/UWORLD/core/types"
 )
 
 type FutureTxList struct {

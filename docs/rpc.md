@@ -2,8 +2,8 @@
 
 ## 介绍
 GRPC实现
-* go语言调用，使用现有的[Client](https://github.com/jhdriver/UWORLD/blob/master/rpc/rpcclient.go)
-* 其他语言，使用[proto文件](https://github.com/jhdriver/UWORLD/blob/master/rpc/rpc.proto)生成rpcclient
+* go语言调用，使用现有的[Client](https://github.com/uworldao/UWORLD/blob/master/rpc/rpcclient.go)
+* 其他语言，使用[proto文件](https://github.com/uworldao/UWORLD/blob/master/rpc/rpc.proto)生成rpcclient
 
 ```
 type customCredential struct {

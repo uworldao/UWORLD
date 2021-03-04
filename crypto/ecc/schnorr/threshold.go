@@ -9,7 +9,7 @@ import (
 	"math/big"
 
 	chainhash "github.com/Qitmeer/qitmeer-lib/common/hash"
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
 )
 
 // Sha256VersionStringRFC6979 is the RFC6979 nonce version for a Schnorr signature

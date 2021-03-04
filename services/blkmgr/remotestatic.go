@@ -1,8 +1,8 @@
 package blkmgr
 
 import (
-	"github.com/jhdriver/UWORLD/core/types"
 	"github.com/libp2p/go-libp2p-core/peer"
+	"github.com/uworldao/UWORLD/core/types"
 )
 
 type remoteBlockStatic struct {

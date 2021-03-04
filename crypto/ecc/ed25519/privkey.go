@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/jhdriver/UWORLD/crypto/ecc/ed25519/internal"
+	"github.com/uworldao/UWORLD/crypto/ecc/ed25519/internal"
 )
 
 // These constants define the lengths of serialized private keys.

@@ -1,4 +1,4 @@
-module github.com/jhdriver/UWORLD
+module github.com/uworldao/UWORLD
 
 go 1.13
 

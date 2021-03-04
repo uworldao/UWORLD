@@ -1,7 +1,7 @@
 package triedb
 
 import (
-	"github.com/jhdriver/UWORLD/database/leveldb"
+	"github.com/uworldao/UWORLD/database/leveldb"
 )
 
 // Implementation of tire tree storage

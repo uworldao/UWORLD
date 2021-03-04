@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/jhdriver/UWORLD/config"
-	"github.com/jhdriver/UWORLD/node"
+	"github.com/uworldao/UWORLD/config"
+	"github.com/uworldao/UWORLD/node"
 	"os"
 	"os/signal"
 	"runtime"

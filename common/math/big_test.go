@@ -19,7 +19,7 @@ package math
 import (
 	"bytes"
 	"encoding/hex"
-	"github.com/jhdriver/UWORLD/common/util"
+	"github.com/uworldao/UWORLD/common/util"
 	"math/big"
 	"testing"
 )

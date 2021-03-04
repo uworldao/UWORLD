@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 
-	"github.com/jhdriver/UWORLD/crypto/ecc/secp256k1"
+	"github.com/uworldao/UWORLD/crypto/ecc/secp256k1"
 )
 
 // This example demonstrates signing a message with a secp256k1 private key that

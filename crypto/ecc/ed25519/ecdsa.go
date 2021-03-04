@@ -16,8 +16,8 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/jhdriver/UWORLD/crypto/ecc/ed25519/internal"
-	"github.com/jhdriver/UWORLD/crypto/ecc/ed25519/internal/edwards25519"
+	"github.com/uworldao/UWORLD/crypto/ecc/ed25519/internal"
+	"github.com/uworldao/UWORLD/crypto/ecc/ed25519/internal/edwards25519"
 )
 
 // BIG CAVEAT
