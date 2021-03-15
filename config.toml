@@ -17,7 +17,7 @@ ExternalIp = "0.0.0.0"
 
 
 # Custom bootstrap
-Bootstrap = ""
+#Bootstrap = ""
 
 # P2P port (default = "33330")
 P2pPort="33330"
