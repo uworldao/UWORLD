@@ -81,7 +81,7 @@ func LoadConfig() (*Config, error) {
 	}
 
 	if cfg.Version {
-		fmt.Printf("UWorld version %s\n", param.Version)
+		fmt.Println(param.StringifySingleLine(appName))
 		os.Exit(0)
 	}
 
