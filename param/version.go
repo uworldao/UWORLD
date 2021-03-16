@@ -2,7 +2,6 @@ package param
 
 import (
 	"fmt"
-	"runtime"
 )
 
 var (
@@ -19,8 +18,8 @@ func StringifySingleLine(app string) string {
 	} else {
 		GitCommitLog = GitCommitLog[0:10]
 	}
-	return fmt.Sprintf("%s version=%s. commit=%s. build=%s. go=%s. runtime=%s/%s.",
-		app, Version, GitStatus, BuildTime, BuildGoVersion, runtime.GOOS, runtime.GOARCH)
+	return fmt.Sprintf("%s-%s-%s",
+		app, Version, GitCommitLog)
 }
 
 func VersionInfo() string {

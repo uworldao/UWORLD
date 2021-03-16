@@ -23,6 +23,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+*.zip
 
 # ---> JetBrains
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
@@ -74,23 +75,6 @@ crashlytics-build.properties
 
 .vscode/
 
-ub_chain*
-cmd/wallet/wallet
-go.sum
-cmd/wallet/wallet.toml
 data
-config.toml.example
-config4.toml
-.DS_Store
-cmd/.DS_Store
-cmd/tools/3ajHpoF4Tc6jJAQduqGxSShP71nSkKM8sAMK.json
-cmd/tools/3ajQWtvSU2NPVDaeG1s3Y57ZHp7mbNv1qU8f.json
-cmd/tools/bootstrap
-cmd/tools/tools
-cmd/wallet/keystore
-go.sum
-ub_server
-wallet.toml
-config1.toml
-config2.toml
-config3.toml
+build
+
