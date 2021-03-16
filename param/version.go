@@ -5,11 +5,9 @@ import (
 )
 
 var (
-	GitCommitLog   = "unknown_unknown"
-	GitStatus      = "unknown_unknown"
-	BuildTime      = "unknown_unknown"
-	BuildGoVersion = "unknown_unknown"
-	Version        = "v0.3.3"
+	GitCommitLog = "unknown_unknown"
+	GitStatus    = "unknown_unknown"
+	Version      = "v0.3.4"
 )
 
 func StringifySingleLine(app string) string {

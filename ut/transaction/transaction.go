@@ -39,7 +39,7 @@ func NewContract(from, to, contract string, note string, amount, nonce uint64, n
 			Time:       uint64(time.Now().Unix()),
 			Note:       note,
 			SignScript: &types.SignScript{},
-			Fees:       param.TokenFees,
+			Fees:       param.TokenConsumption,
 		},
 		TxBody: &types.ContractBody{
 			Contract:       hasharry.StringToAddress(contract),

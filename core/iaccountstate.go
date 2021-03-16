@@ -18,6 +18,8 @@ type IAccountState interface {
 
 	UpdateFees(fees, blockHeight uint64) error
 
+	UpdateConsumption(consumption, blockHeight uint64) error
+
 	UpdateConfirmedHeight(height uint64)
 
 	VerifyState(tx types.ITransaction) error
