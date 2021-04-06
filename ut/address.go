@@ -73,6 +73,10 @@ func CheckUWDAddress(version string, addr string) bool {
 		return false
 	}
 
+	if addr == param.EaterAddress.String() {
+		return true
+	}
+
 	if len(addr) != addressLength {
 		return false
 	}

@@ -78,3 +78,13 @@ crashlytics-build.properties
 data
 build
 
+cmd/wallet/keystore
+cmd/wallet/wallet
+cmd/tools/tools
+UWORLD
+*.zip
+config1.toml
+config2.toml
+config3.toml
+
+

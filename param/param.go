@@ -19,7 +19,8 @@ var (
 	// Token name
 	Token = hasharry.StringToAddress("UWD")
 
-	FeeAddress = hasharry.StringToAddress("UWDNQhgkNHCLdVhCFvpo6bGXXdcKtTTfeQZE")
+	FeeAddress   = hasharry.StringToAddress("UWDNQhgkNHCLdVhCFvpo6bGXXdcKtTTfeQZE")
+	EaterAddress = hasharry.StringToAddress("UWDCoinEaterAddressDontSend000000000")
 )
 
 const (
@@ -69,7 +70,7 @@ const (
 
 	Fees uint64 = 0.002 * AtomsPerCoin
 
-	TokenFees uint64 = 10.24 * AtomsPerCoin
+	TokenConsumption uint64 = 10.24 * AtomsPerCoin
 
 	CoinHeight = 1
 )

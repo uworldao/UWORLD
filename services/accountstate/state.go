@@ -110,15 +110,35 @@ func (cs *AccountState) UpdateFees(fees, blockHeight uint64) error {
 	cs.accountMutex.Lock()
 	defer cs.accountMutex.Unlock()
 
-	var feesAccount types.IAccount
+	var account types.IAccount
 
-	feesAccount = cs.stateDb.GetAccountState(param.FeeAddress)
-	err := feesAccount.Update(cs.confirmedHeight)
+	account = cs.stateDb.GetAccountState(param.FeeAddress)
+	err := account.Update(cs.confirmedHeight)
 	if err != nil {
 		return err
 	}
-	feesAccount.FeesChange(fees, blockHeight)
-	cs.setAccountState(feesAccount)
+	account.FeesChange(fees, blockHeight)
+	cs.setAccountState(account)
+	return nil
+}
+
+func (cs *AccountState) UpdateConsumption(fees, blockHeight uint64) error {
+	if fees == 0 {
+		return nil
+	}
+
+	cs.accountMutex.Lock()
+	defer cs.accountMutex.Unlock()
+
+	var account types.IAccount
+
+	account = cs.stateDb.GetAccountState(param.EaterAddress)
+	err := account.Update(cs.confirmedHeight)
+	if err != nil {
+		return err
+	}
+	account.ConsumptionChange(fees, blockHeight)
+	cs.setAccountState(account)
 	return nil
 }
 

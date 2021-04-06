@@ -33,7 +33,19 @@ func (s Transactions) Hash() hash2.Hash {
 func (s Transactions) SumFees() uint64 {
 	var sum uint64
 	for _, tx := range s {
-		sum += tx.GetFees()
+		if tx.GetTxType() != ContractTransaction {
+			sum += tx.GetFees()
+		}
+	}
+	return sum
+}
+
+func (s Transactions) SumConsumption() uint64 {
+	var sum uint64
+	for _, tx := range s {
+		if tx.GetTxType() == ContractTransaction {
+			sum += tx.GetFees()
+		}
 	}
 	return sum
 }

@@ -153,7 +153,7 @@ func (n *Node) SignHash(hash hasharry.Hash) (*types.SignScript, error) {
 
 func (n *Node) NodeInfo() *types.NodeInfo {
 	return &types.NodeInfo{
-		Version:     param.Version,
+		Version:     param.StringifySingleLine(),
 		Net:         param.Net,
 		P2pId:       n.p2pServer.ID(),
 		P2pAddr:     n.p2pServer.Addr(),

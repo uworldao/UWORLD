@@ -5,14 +5,10 @@ set -x
 GitCommitLog=`git log --pretty=oneline -n 1`
 GitCommitLog=${GitCommitLog//\'/\"}
 GitStatus=`git status -s`
-BuildTime=`date +'%Y.%m.%d %H:%M:%S'`
-BuildGoVersion=`go version`
 
 LDFlags=" \
-    -X 'github.com/uworldao/UWORLD/param/version.GitCommitLog=${GitCommitLog}' \
-    -X 'github.com/uworldao/UWORLD/param/version.GitStatus=${GitStatus}' \
-    -X 'github.com/uworldao/UWORLD/param/version.BuildTime=${BuildTime}' \
-    -X 'github.com/uworldao/UWORLD/param/version.BuildGoVersion=${BuildGoVersion}' \
+    -X 'github.com/uworldao/UWORLD/param.GitCommitLog=${GitCommitLog}' \
+    -X 'github.com/uworldao/UWORLD/param.GitStatus=${GitStatus}' \
 "
 
 ROOT_DIR=`pwd`

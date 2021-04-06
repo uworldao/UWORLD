@@ -21,6 +21,11 @@ import (
 	"time"
 )
 
+const (
+	max_find_sleep = 1 * 60 * 3
+	min_find_sleep = 1
+)
+
 type P2pServer struct {
 	host         core.Host
 	dht          *dht.IpfsDHT
@@ -235,7 +240,7 @@ func (p *P2pServer) discovery() error {
 	log.Info("Announcing ourselves...")
 	routingDiscovery := discovery.NewRoutingDiscovery(p.dht)
 	discovery.Advertise(p.ctx, routingDiscovery, param.UniqueNetWork)
-
+	sleep := min_find_sleep
 	for {
 		select {
 		case _ = <-p.stop:
@@ -246,7 +251,7 @@ func (p *P2pServer) discovery() error {
 			peerChan, err := routingDiscovery.FindPeers(p.ctx, param.UniqueNetWork)
 			if err != nil {
 				log.Error("Failed to find peers", "error", err)
-				time.Sleep(time.Second * 60)
+				time.Sleep(time.Second * time.Duration(sleep))
 				continue
 			}
 		OUTCHAN:
@@ -274,9 +279,11 @@ func (p *P2pServer) discovery() error {
 				}
 			}
 		}
-		time.Sleep(time.Second * 60)
+		if sleep < max_find_sleep {
+			sleep += 2
+		}
+		time.Sleep(time.Second * time.Duration(sleep))
 	}
-	return nil
 }
 
 // Determine whether the peer is alive

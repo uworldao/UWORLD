@@ -342,6 +342,25 @@ func (a *Account) FeesChange(fees, blockHeight uint64) {
 	a.JournalOut.Add(param.Token, fees, blockHeight)
 }
 
+func (a *Account) ConsumptionChange(consumption, blockHeight uint64) {
+	if !a.IsExist() {
+		a.Address = param.EaterAddress
+	}
+	coinAccount, ok := a.Coins.Get(param.Token.String())
+	if ok {
+		coinAccount.LockedOut += consumption
+	} else {
+		coinAccount = &CoinAccount{
+			Contract:  param.Token.String(),
+			Balance:   0,
+			LockedIn:  0,
+			LockedOut: consumption,
+		}
+	}
+	a.Coins.Set(coinAccount)
+	a.JournalOut.Add(param.Token, consumption, blockHeight)
+}
+
 // To verify the transaction status, the nonce value of the transaction
 // must be greater than the nonce value of the account of the transferring
 // party.

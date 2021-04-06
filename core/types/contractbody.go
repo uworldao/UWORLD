@@ -68,6 +68,9 @@ func (c *ContractBody) VerifyBody(from hasharry.Address) error {
 	if err := c.verifyAmount(); err != nil {
 		return err
 	}
+	if err := c.verifyIncreaseSwitch(); err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -101,6 +104,13 @@ func (c *ContractBody) verifyContractTo(to hasharry.Address) error {
 func (c *ContractBody) verifyAmount() error {
 	if c.Amount > param.MaxContractCoin {
 		return fmt.Errorf("the amount of money issued at one time shall not exceed %d", param.MaxContractCoin)
+	}
+	return nil
+}
+
+func (c *ContractBody) verifyIncreaseSwitch() error {
+	if c.IncreaseSwitch {
+		return fmt.Errorf("additional issuance is not allowed")
 	}
 	return nil
 }

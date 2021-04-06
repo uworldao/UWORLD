@@ -124,7 +124,7 @@ func (t *Transaction) verifyTxFees() error {
 	case NormalTransaction:
 		fees = param.Fees
 	case ContractTransaction:
-		fees = param.TokenFees
+		fees = param.TokenConsumption
 	}
 	if t.TxHead.Fees != fees {
 		return fmt.Errorf("transaction costs %d fees", fees)

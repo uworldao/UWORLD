@@ -302,7 +302,10 @@ func (blc *BlockChain) updateState(block *types.Block) error {
 		}
 
 	}
-	return blc.accountState.UpdateFees(block.Body.Transactions.SumFees(), block.Height)
+	if err := blc.accountState.UpdateFees(block.Body.Transactions.SumFees(), block.Height); err != nil {
+		return err
+	}
+	return blc.accountState.UpdateConsumption(block.Body.Transactions.SumConsumption(), block.Height)
 }
 
 func (blc *BlockChain) updateGenesisState(block *types.Block) error {

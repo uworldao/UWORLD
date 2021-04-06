@@ -45,8 +45,8 @@ var SendContractCmd = &cobra.Command{
 func SendContract(cmd *cobra.Command, args []string) {
 	var passwd []byte
 	var err error
-	if len(args) > 7 {
-		passwd = []byte(args[7])
+	if len(args) > 8 {
+		passwd = []byte(args[8])
 	} else {
 		fmt.Println("please input password：")
 		passwd, err = readPassWd()

@@ -81,7 +81,7 @@ func LoadConfig() (*Config, error) {
 	}
 
 	if cfg.Version {
-		fmt.Println(param.StringifySingleLine(appName))
+		fmt.Println(param.StringifySingleLine())
 		os.Exit(0)
 	}
 
