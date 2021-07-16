@@ -43,6 +43,9 @@ func (th *RpcTransactionHead) FromBytes() []byte {
 }
 
 func TranslateRpcTxToTx(rpcTx *RpcTransaction) (*Transaction, error) {
+	if rpcTx == nil || rpcTx.TxHead == nil || rpcTx.TxBody == nil{
+		return nil, errors.New("invalid transaction")
+	}
 	var err error
 	txHash, err := hasharry.StringToHash(rpcTx.TxHead.TxHash)
 	if err != nil {

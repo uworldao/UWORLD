@@ -110,7 +110,7 @@ func (rs *Server) SendTransaction(_ context.Context, req *Bytes) (*Response, err
 	}
 	tx, err := coreTypes.TranslateRpcTxToTx(rpcTx)
 	if err != nil {
-		return NewResponse(rpctypes.RpcErrParam, nil, ""), nil
+		return NewResponse(rpctypes.RpcErrParam, nil, err.Error()), nil
 	}
 	if err := rs.txPool.Add(tx, false); err != nil {
 		return NewResponse(rpctypes.RpcErrTxPool, nil, err.Error()), nil
