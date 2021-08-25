@@ -13,6 +13,7 @@ func init() {
 		GetLastHeightCmd,
 		GetTxPoolTxs,
 		GetPeersCmd,
+		AccountsCmd,
 		NodeInfoCmd,
 	}
 	RootCmd.AddCommand(nodeCmds...)
@@ -44,6 +45,43 @@ func GetTxPool(cmd *cobra.Command, args []string) {
 	defer cancel()
 
 	resp, err := client.Gc.GetPoolTxs(ctx, &rpc.Null{})
+	if err != nil {
+		log.Error(cmd.Use+" err: ", err)
+		return
+	}
+	if resp.Code == 0 {
+		output(string(resp.Result))
+		return
+	}
+	outputRespError(cmd.Use, resp)
+}
+
+
+//GenerateCmd cpu mine block
+var AccountsCmd = &cobra.Command{
+	Use:     "Accounts",
+	Short:   "Accounts; Get accounts;",
+	Aliases: []string{"gas", "GAS"},
+	Example: `
+	Accounts 
+	`,
+	Args: cobra.MinimumNArgs(0),
+	Run:  Accounts,
+}
+
+func Accounts(cmd *cobra.Command, args []string) {
+
+	client, err := NewRpcClient()
+	if err != nil {
+		log.Error(cmd.Use+" err: ", err)
+		return
+	}
+	defer client.Close()
+
+	ctx, cancel := context.WithTimeout(context.TODO(), time.Second*20)
+	defer cancel()
+
+	resp, err := client.Gc.GetAccounts(ctx, &rpc.Null{})
 	if err != nil {
 		log.Error(cmd.Use+" err: ", err)
 		return

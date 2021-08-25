@@ -35,6 +35,13 @@ func (cs *AccountState) InitTrie(stateRoot hasharry.Hash) error {
 	return cs.stateDb.InitTrie(stateRoot)
 }
 
+func (cs *AccountState) GetAccounts() []types.IAccount{
+	cs.accountMutex.RLock()
+	defer cs.accountMutex.RUnlock()
+
+	return cs.stateDb.GetAccounts()
+}
+
 // Get account status, if the account status needs to be updated
 // according to the effective block height, it will be updated,
 // but not stored.

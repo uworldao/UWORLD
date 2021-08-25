@@ -8,6 +8,7 @@ import (
 // Storage interface for account balance information
 type IAccountStorage interface {
 	InitTrie(stateRoot hasharry.Hash) error
+	GetAccounts() []types.IAccount
 	GetAccountState(stateKey hasharry.Address) types.IAccount
 	SetAccountState(account types.IAccount)
 	GetAccountBalance(stateKey hasharry.Address, contract string) uint64

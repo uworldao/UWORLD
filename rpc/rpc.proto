@@ -21,6 +21,7 @@ service Greeter {
   // Sends a greeting
   rpc SendTransaction(Bytes)returns (Response) {}
   rpc GetAccount(Address)returns (Response) {}
+  rpc GetAccounts(Null)returns (Response) {}
   rpc GetTransaction(Hash)returns (Response) {}
   rpc GetBlockByHash(Hash)returns (Response) {}
   rpc GetBlockByHeight(Height)returns (Response) {}

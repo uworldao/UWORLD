@@ -104,6 +104,7 @@ func (rs *Server) NewServer() (*grpc.Server, error) {
 }
 
 func (rs *Server) SendTransaction(_ context.Context, req *Bytes) (*Response, error) {
+	fmt.Println(string(req.String()))
 	var rpcTx *coreTypes.RpcTransaction
 	if err := json.Unmarshal(req.Bytes, &rpcTx); err != nil {
 		return NewResponse(rpctypes.RpcErrParam, nil, err.Error()), nil
@@ -129,6 +130,16 @@ func (rs *Server) GetAccount(_ context.Context, req *Address) (*Response, error)
 	if err != nil {
 		return NewResponse(rpctypes.RpcErrMarshal, nil, fmt.Sprintf("%s address not exsit", req.Address)), nil
 	}
+	return NewResponse(rpctypes.RpcSuccess, bytes, ""), nil
+}
+
+func (rs *Server) GetAccounts(_ context.Context, req *Null) (*Response, error) {
+	accounts := rs.accountState.GetAccounts()
+	var rpcAccounts []*rpctypes.Account
+	for _, account := range accounts{
+		rpcAccounts = append(rpcAccounts, rpctypes.TranslateAccountToRpcAccount(account.(*coreTypes.Account)))
+	}
+	bytes, _ := json.Marshal(rpcAccounts)
 	return NewResponse(rpctypes.RpcSuccess, bytes, ""), nil
 }
 
